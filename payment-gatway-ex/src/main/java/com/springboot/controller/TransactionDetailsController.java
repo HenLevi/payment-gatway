@@ -19,7 +19,7 @@ import com.springboot.model.TransactionDetails;
 import com.springboot.services.TransactionDetailsService;
 
 @RestController
-@RequestMapping(value = "/api/transactionDetails", produces = "application/json")
+@RequestMapping(value = "/api/transactionDetails")
 public class TransactionDetailsController {
 
 	private static Logger LOG = LoggerFactory.getLogger(TransactionDetailsController.class);
