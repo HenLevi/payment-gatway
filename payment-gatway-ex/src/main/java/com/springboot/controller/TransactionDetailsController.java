@@ -27,7 +27,7 @@ public class TransactionDetailsController {
 	@Autowired
 	TransactionDetailsService transactiondetailsservice;
 
-	@GetMapping(value = "/getTransactionals", produces = "application/json")
+	@GetMapping(value = "/getTransactionals")
 	public ResponseEntity<List<TransactionDetails>> getTransactional() {
 		try {
 			List<TransactionDetails> allTransactional = transactiondetailsservice.getTransactional();
@@ -42,7 +42,7 @@ public class TransactionDetailsController {
 	}
 
 	
-	@GetMapping(value = "/getTransactional/{id}", produces = "application/json")
+	@GetMapping(value = "/getTransactional/{id}")
 	public ResponseEntity<TransactionDetails> getTransactionalById(@PathVariable(name = "id") long id) {
 		try {
 			TransactionDetails transactionaldetail = transactiondetailsservice.getTransactionDetailsById(id);
@@ -58,7 +58,7 @@ public class TransactionDetailsController {
 		}
 	}
 
-	@PostMapping(value = "/addTransactionDetailsEncription", produces = "application/json", consumes = "application/json")
+	@PostMapping(value = "/addTransactionDetailsEncription")
 	public ResponseEntity<TransactionDetails> CreateTransactionDetails(
 			@Valid @RequestBody TransactionDetails transactiondetails) {
 		try {
